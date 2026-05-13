@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>network — calibexs</title>
+<meta name="theme-color" content="#7c3aed">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#05010a;
+  color:#f5f3ff;
+  overflow-x:hidden;
+}
+
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(99,102,241,.10), transparent 30%),
+    #05010a;
+}
+
+.wrap{
+  position:relative;
+  z-index:2;
+  max-width:1150px;
+  margin:auto;
+  padding:40px 20px 100px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:75px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  background:linear-gradient(135deg,#f5d0fe,#a78bfa,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#d8b4fe;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  padding:11px 15px;
+  border-radius:999px;
+  transition:.25s ease;
+}
+
+.nav a:hover{
+  background:rgba(168,85,247,.12);
+  border-color:rgba(168,85,247,.35);
+}
+
+.hero{
+  margin-bottom:60px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:clamp(70px,13vw,150px);
+  line-height:.9;
+  letter-spacing:-6px;
+  font-weight:1000;
+}
+
+.hero h1 span{
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:740px;
+  margin-top:24px;
+  color:#c4b5fd;
+  line-height:1.8;
+  font-size:18px;
+}
+
+.notice{
+  margin-top:28px;
+  max-width:780px;
+  color:#a78bfa;
+  font-size:14px;
+  line-height:1.7;
+  padding:18px 20px;
+  border-radius:22px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.section-title{
+  margin:75px 0 24px;
+  font-size:34px;
+  letter-spacing:-1px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+
+.card{
+  text-decoration:none;
+  color:inherit;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:24px;
+  backdrop-filter:blur(18px);
+  transition:.25s ease;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(168,85,247,.35);
+  box-shadow:0 30px 65px rgba(168,85,247,.16);
+}
+
+.tag{
+  display:inline-block;
+  margin-bottom:15px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(168,85,247,.12);
+  border:1px solid rgba(168,85,247,.24);
+  color:#d8b4fe;
+  font-size:12px;
+  font-weight:800;
+}
+
+.card h2{
+  margin:0 0 12px;
+  font-size:28px;
+  letter-spacing:-1px;
+}
+
+.card p{
+  margin:0;
+  color:#c4b5fd;
+  line-height:1.7;
+}
+
+.status{
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#86efac;
+  font-size:14px;
+  font-weight:700;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#22c55e;
+  box-shadow:0 0 18px #22c55e;
+}
+
+.safe-list{
+  margin-top:20px;
+  padding-left:18px;
+  color:#c4b5fd;
+  line-height:1.9;
+}
+
+.footer{
+  margin-top:80px;
+  text-align:center;
+  color:#8b5cf6;
+  opacity:.8;
+  font-size:14px;
+}
+
+@media(max-width:700px){
+  .top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+}
+</style>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@calibexs">
+<meta name="twitter:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta name="twitter:image" content="https://calibexs.com/preview.svg">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="logo">
+    <span>calibexs</span>
+  </div>
+
+  <nav class="nav">
+    <a href="/">home</a>
+    <a href="/projects/">projects</a>
+    <a href="/status/">status</a>
+    <a href="/journal/">journal</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1><span>network</span></h1>
+
+  <p>
+    public-facing infrastructure, hosted services,
+    status systems, domain projects, and web experiments.
+  </p>
+
+  <div class="notice">
+    more to come
+  </div>
+</section>
+
+<h2 class="section-title">public services</h2>
+
+<div class="grid">
+
+  <a class="card" href="/">
+    <div class="tag">LIVE</div>
+    <h2>main site</h2>
+    <p>
+      the main calibexs.com homepage, project hub,
+      and public entry point.
+    </p>
+    <div class="status"><span class="dot"></span>online</div>
+  </a>
+
+  <a class="card" href="https://status.calibexs.com/" target="_blank" rel="noopener noreferrer">
+    <div class="tag">LIVE</div>
+    <h2>status page</h2>
+    <p>
+      live public status dashboard for services
+      without exposing sensitive server details.
+    </p>
+    <div class="status"><span class="dot"></span>monitored</div>
+  </a>
+
+  <a class="card" href="/journal/">
+    <div class="tag">AUTO</div>
+    <h2>journal</h2>
+    <p>
+      markdown-powered journal that updates through
+      GitHub and static site generation.
+    </p>
+    <div class="status"><span class="dot"></span>static</div>
+  </a>
+
+  <a class="card" href="/gallery/">
+    <div class="tag">MEDIA</div>
+    <h2>gallery</h2>
+    <p>
+      visual archive hub for photography,
+      edits, cars, urbex, and random media.
+    </p>
+    <div class="status"><span class="dot"></span>planned</div>
+  </a>
+
+</div>
+
+<h2 class="section-title">stack</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="tag">WEB</div>
+    <h2>static-first</h2>
+    <p>
+      lightweight pages served through nginx,
+      with most content kept simple and fast.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="tag">CONTENT</div>
+    <h2>github backed</h2>
+    <p>
+      journal content is versioned and deployed
+      from a git workflow instead of a heavy CMS.
+    </p>
+  </div>
+
+</div>
+
+<h2 class="section-title">future</h2>
+
+<div class="card">
+  <div class="tag">BOUNDARY</div>
+  <h2>future</h2>
+
+  <ul class="safe-list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</div>
+
+<div class="footer">
+  calibexs.com — public network overview
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("particles-js", {
+  particles: {
+    number: {
+      value: 60,
+      density: {
+        enable: true,
+        area: 900
+      }
+    },
+    color: {
+      value: ["#a855f7", "#c084fc", "#818cf8"]
+    },
+    opacity: {
+      value: 0.32,
+      random: true
+    },
+    size: {
+      value: 2.3,
+      random: true
+    },
+    links: {
+      enable: true,
+      distance: 140,
+      color: "#9333ea",
+      opacity: 0.18,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 0.9,
+      outModes: {
+        default: "out"
+      }
+    }
+  },
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "grab"
+      }
+    },
+    modes: {
+      grab: {
+        distance: 140,
+        links: {
+          opacity: 0.45
+        }
+      }
+    }
+  },
+  detectRetina: true
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 — calibexs</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+
+  font-family:Inter,Arial,sans-serif;
+
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.20), transparent 28%),
+    radial-gradient(circle at top right, rgba(99,102,241,.16), transparent 25%),
+    radial-gradient(circle at bottom center, rgba(192,132,252,.12), transparent 30%),
+    #05010a;
+
+  color:#f5f3ff;
+}
+
+.grid{
+  position:fixed;
+  inset:0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+  background-size:42px 42px;
+
+  mask-image:linear-gradient(to bottom, black, transparent 85%);
+  pointer-events:none;
+}
+
+.wrap{
+  position:relative;
+  z-index:2;
+
+  width:min(90%,700px);
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:34px;
+
+  padding:60px 40px;
+
+  text-align:center;
+
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.code{
+  font-size:clamp(80px,15vw,170px);
+  line-height:.9;
+  font-weight:1000;
+  letter-spacing:-8px;
+
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+h1{
+  margin:18px 0 14px;
+  font-size:38px;
+  letter-spacing:-1px;
+}
+
+p{
+  color:#c4b5fd;
+  font-size:18px;
+  line-height:1.8;
+  margin:0 auto;
+  max-width:520px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+
+  margin-top:38px;
+}
+
+.buttons a{
+  text-decoration:none;
+
+  padding:14px 22px;
+
+  border-radius:18px;
+
+  font-weight:700;
+
+  transition:.25s ease;
+}
+
+.primary{
+  background:linear-gradient(135deg,#9333ea,#6366f1);
+  color:white;
+
+  box-shadow:0 15px 40px rgba(147,51,234,.35);
+}
+
+.secondary{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  color:#ddd6fe;
+}
+
+.buttons a:hover{
+  transform:translateY(-3px);
+}
+
+.footer{
+  margin-top:38px;
+  font-size:14px;
+  color:#8b5cf6;
+  opacity:.8;
+}
+
+@media(max-width:700px){
+
+  .wrap{
+    padding:50px 26px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@calibexs">
+<meta name="twitter:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta name="twitter:image" content="https://calibexs.com/preview.svg">
+
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<div class="wrap">
+
+  <div class="code">
+    404
+  </div>
+
+  <h1>
+    page not found
+  </h1>
+
+  <p>
+    this page either does not exist,
+    was moved, or is still being built.
+  </p>
+
+  <div class="buttons">
+
+    <a class="primary" href="/">
+      return home
+    </a>
+
+
+  </div>
+
+  <div class="footer">
+    calibexs.com
+  </div>
+
+</div>
+
+</body>
+</html>

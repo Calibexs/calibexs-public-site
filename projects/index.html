@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>projects — calibexs</title>
+
+<meta name="theme-color" content="#7c3aed">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#05010a;
+  color:#f5f3ff;
+  overflow-x:hidden;
+}
+
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:0;
+
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(99,102,241,.12), transparent 25%),
+    radial-gradient(circle at bottom center, rgba(192,132,252,.10), transparent 30%),
+    #05010a;
+}
+
+.wrap{
+  position:relative;
+  z-index:2;
+
+  max-width:1150px;
+  margin:auto;
+
+  padding:40px 20px 100px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+
+  margin-bottom:75px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  background:linear-gradient(135deg,#f5d0fe,#a78bfa,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nav{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  text-decoration:none;
+
+  color:#d8b4fe;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.03);
+
+  padding:11px 15px;
+
+  border-radius:999px;
+
+  transition:.25s ease;
+}
+
+.nav a:hover{
+  background:rgba(168,85,247,.12);
+  border-color:rgba(168,85,247,.35);
+}
+
+.hero{
+  margin-bottom:60px;
+}
+
+.hero h1{
+  margin:0;
+
+  font-size:clamp(70px,13vw,150px);
+
+  line-height:.9;
+
+  letter-spacing:-6px;
+
+  font-weight:1000;
+}
+
+.hero h1 span{
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:720px;
+
+  margin-top:24px;
+
+  color:#c4b5fd;
+
+  line-height:1.8;
+
+  font-size:18px;
+}
+
+.github-card{
+  margin-top:40px;
+
+  display:flex;
+  gap:20px;
+  align-items:center;
+
+  padding:24px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  text-decoration:none;
+
+  color:white;
+
+  transition:.25s ease;
+
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.github-card:hover{
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,.35);
+
+  box-shadow:0 30px 70px rgba(168,85,247,.16);
+}
+
+.github-icon{
+  width:82px;
+  height:82px;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #6366f1
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:34px;
+  font-weight:900;
+
+  color:white;
+
+  flex-shrink:0;
+
+  box-shadow:0 15px 40px rgba(168,85,247,.35);
+}
+
+.github-content h2{
+  margin:0;
+
+  font-size:30px;
+
+  letter-spacing:-1px;
+}
+
+.github-content p{
+  margin:10px 0 0;
+
+  color:#c4b5fd;
+
+  line-height:1.7;
+}
+
+.github-link{
+  margin-top:12px;
+
+  color:#d8b4fe;
+
+  font-size:14px;
+}
+
+.section-title{
+  margin:75px 0 24px;
+
+  font-size:34px;
+
+  letter-spacing:-1px;
+}
+
+.grid{
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+  gap:18px;
+}
+
+.card{
+  text-decoration:none;
+
+  color:inherit;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  padding:24px;
+
+  backdrop-filter:blur(18px);
+
+  transition:.25s ease;
+
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+
+  border-color:rgba(168,85,247,.35);
+
+  box-shadow:0 30px 65px rgba(168,85,247,.16);
+}
+
+.tag{
+  display:inline-block;
+
+  margin-bottom:15px;
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  background:rgba(168,85,247,.12);
+
+  border:1px solid rgba(168,85,247,.24);
+
+  color:#d8b4fe;
+
+  font-size:12px;
+
+  font-weight:800;
+}
+
+.card h3{
+  margin:0 0 12px;
+
+  font-size:26px;
+
+  letter-spacing:-1px;
+}
+
+.card p{
+  margin:0;
+
+  color:#c4b5fd;
+
+  line-height:1.7;
+}
+
+.footer{
+  margin-top:80px;
+
+  text-align:center;
+
+  color:#8b5cf6;
+
+  opacity:.8;
+
+  font-size:14px;
+}
+
+@media(max-width:700px){
+
+  .top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .github-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@calibexs">
+<meta name="twitter:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta name="twitter:image" content="https://calibexs.com/preview.svg">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="wrap">
+
+<div class="top">
+
+  <div class="logo">
+    <span>calibexs</span>
+  </div>
+
+  <nav class="nav">
+    <a href="/">home</a>
+    <a href="/journal/">journal</a>
+    <a href="/gallery/">gallery</a>
+  </nav>
+
+</div>
+
+<section class="hero">
+
+  <h1><span>projects</span></h1>
+
+  <p>
+    experiments, infrastructure,
+    websites, tools, random builds,
+    archived ideas, and unfinished things.
+  </p>
+
+  <a
+    class="github-card"
+    href="https://github.com/Calibexs"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <div class="github-icon">
+      <>
+    </div>
+
+    <div class="github-content">
+
+      <h2>@Calibexs</h2>
+
+      <p>
+        source code, experiments,
+        web projects, automation,
+        infrastructure, and random development work.
+      </p>
+
+      <div class="github-link">
+        github.com/Calibexs →
+      </div>
+
+    </div>
+
+  </a>
+
+</section>
+
+<h2 class="section-title">featured</h2>
+
+<div class="grid">
+
+  <a class="card" href="/journal/">
+
+    <div class="tag">LIVE</div>
+
+    <h3>journal</h3>
+
+    <p>
+      markdown-powered notes,
+      logs, updates, and project entries.
+    </p>
+
+  </a>
+
+  <a class="card" href="https://status.calibexs.com">
+
+    <div class="tag">STATUS</div>
+
+    <h3>status system</h3>
+
+    <p>
+      public-safe infrastructure
+      and uptime monitoring dashboard.
+    </p>
+
+  </a>
+
+
+<div class="footer">
+  calibexs.com — projects archive
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("particles-js", {
+
+  particles: {
+
+    number: {
+      value: 65,
+      density: {
+        enable: true,
+        area: 900
+      }
+    },
+
+    color: {
+      value: [
+        "#a855f7",
+        "#c084fc",
+        "#818cf8"
+      ]
+    },
+
+    opacity: {
+      value: 0.35,
+      random: true
+    },
+
+    size: {
+      value: 2.5,
+      random: true
+    },
+
+    links: {
+      enable: true,
+      distance: 140,
+      color: "#9333ea",
+      opacity: 0.22,
+      width: 1
+    },
+
+    move: {
+      enable: true,
+      speed: 1,
+      outModes: {
+        default: "out"
+      }
+    }
+
+  },
+
+  interactivity: {
+
+    events: {
+
+      onHover: {
+        enable: true,
+        mode: "grab"
+      }
+
+    },
+
+    modes: {
+
+      grab: {
+        distance: 140,
+        links: {
+          opacity: 0.5
+        }
+      }
+
+    }
+
+  },
+
+  detectRetina: true
+
+});
+</script>
+
+</body>
+</html>

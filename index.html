@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>calibexs</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calibexs.com/">
+<meta property="og:image" content="https://calibexs.com/preview.png">
+
+<meta name="theme-color" content="#7c3aed">
+
+<style>
+
+html{
+  scroll-behavior:smooth;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.20), transparent 28%),
+    radial-gradient(circle at top right, rgba(99,102,241,.16), transparent 25%),
+    radial-gradient(circle at bottom center, rgba(192,132,252,.12), transparent 30%),
+    #05010a;
+  color:#f5f3ff;
+  overflow-x:hidden;
+}
+
+
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:0;
+
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.20), transparent 28%),
+    radial-gradient(circle at top right, rgba(99,102,241,.16), transparent 25%),
+    radial-gradient(circle at bottom center, rgba(192,132,252,.12), transparent 30%),
+    #05010a;
+}
+
+.wrap{
+  position:relative;
+  z-index:2;
+}
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px 80px;
+  position:relative;
+  z-index:2;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:90px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  background:linear-gradient(135deg,#f5d0fe,#a78bfa,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nav-links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#d8b4fe;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  padding:10px 14px;
+  border-radius:999px;
+  transition:.25s ease;
+  backdrop-filter:blur(12px);
+}
+
+.nav-links a:hover{
+  background:rgba(168,85,247,.12);
+  border-color:rgba(168,85,247,.35);
+  transform:translateY(-2px);
+}
+
+.hero{
+  padding:30px 0 70px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:clamp(70px,12vw,160px);
+  line-height:.9;
+  letter-spacing:-6px;
+  font-weight:1000;
+}
+
+.hero h1 span{
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:720px;
+  margin-top:26px;
+  font-size:20px;
+  line-height:1.8;
+  color:#c4b5fd;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:36px;
+  flex-wrap:wrap;
+}
+
+.hero-buttons a{
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:18px;
+  font-weight:700;
+  transition:.25s ease;
+}
+
+.primary{
+  background:linear-gradient(135deg,#9333ea,#6366f1);
+  color:white;
+  box-shadow:0 15px 40px rgba(147,51,234,.35);
+}
+
+.secondary{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:#ddd6fe;
+}
+
+.hero-buttons a:hover{
+  transform:translateY(-3px);
+}
+
+.section-title{
+  font-size:34px;
+  margin:70px 0 24px;
+  letter-spacing:-1px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.card{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:24px;
+  transition:.25s ease;
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(168,85,247,.4);
+  box-shadow:0 30px 60px rgba(168,85,247,.18);
+}
+
+.tag{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(168,85,247,.12);
+  border:1px solid rgba(168,85,247,.24);
+  color:#d8b4fe;
+  font-size:12px;
+  font-weight:800;
+}
+
+.card h3{
+  margin:0 0 12px;
+  font-size:24px;
+}
+
+.card p{
+  margin:0;
+  color:#c4b5fd;
+  line-height:1.7;
+  font-size:15px;
+}
+
+footer{
+  margin-top:90px;
+  text-align:center;
+  color:#8b5cf6;
+  font-size:14px;
+  opacity:.8;
+}
+
+@media(max-width:700px){
+
+  nav{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@calibexs">
+<meta name="twitter:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta name="twitter:image" content="https://calibexs.com/preview.svg">
+
+</head>
+
+
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="wrap">
+
+<nav>
+
+  <div class="logo">
+    <span>calibexs</span>
+  </div>
+
+  <div class="nav-links">
+    <a href="#projects">projects</a>
+    <a href="#explore">explore</a>
+    <a href="#socials">socials</a>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+  <h1><span>calibexs</span></h1>
+
+  <p>
+    digital projects, cars, urban exploration,
+    servers, photography, experiments,
+    archives, and whatever else ends up online.
+  </p>
+
+  <div class="hero-buttons">
+
+    <a
+      class="primary"
+      href="https://instagram.com/calibexs"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      instagram
+    </a>
+
+    <a
+      class="secondary"
+      href="https://status.calibexs.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      status page
+    </a>
+
+  </div>
+
+</section>
+
+<h2 class="section-title" id="projects">projects</h2>
+
+<div class="cards">
+
+  <a class="card" href="/urbex/">
+
+    <div class="tag">COMING SOON</div>
+
+    <h3>urbex</h3>
+
+    <p>
+      abandoned places, exploration archives,
+      photography sets, and location stories.
+    </p>
+
+  </a>
+
+  <a
+    class="card"
+    href="https://status.calibexs.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <div class="tag">LIVE</div>
+
+    <h3>status</h3>
+
+    <p>
+      live public service status for calibexs infrastructure and projects.
+    </p>
+
+  </a>
+
+  <a class="card" href="/cars/">
+
+    <div class="tag">PLANNED</div>
+
+    <h3>cars</h3>
+
+    <p>
+      builds, media, rollers, edits,
+      photography, and automotive projects.
+    </p>
+
+  </a>
+
+  <a class="card" href="/projects/">
+
+    <div class="tag">WIP</div>
+
+    <h3>projects</h3>
+
+    <p>
+      random experiments, tools, websites,
+      servers, ideas, and unfinished things.
+    </p>
+
+  </a>
+
+</div>
+
+<h2 class="section-title" id="explore">explore</h2>
+
+<div class="cards">
+
+  <a class="card" href="/gallery/">
+
+    <h3>gallery</h3>
+
+    <p>
+      future home for media,
+      edits, photography, and archived content.
+    </p>
+
+  </a>
+
+  <a class="card" href="/journal/">
+
+    <h3>journal</h3>
+
+    <p>
+      notes, logs, ideas,
+      project updates, and random posts.
+    </p>
+
+  </a>
+
+  <a class="card" href="/network/">
+
+    <h3>network</h3>
+
+    <p>
+      public-facing infrastructure,
+      status systems, and hosted services.
+    </p>
+
+  </a>
+
+</div>
+
+<h2 class="section-title" id="socials">socials</h2>
+
+<div class="cards">
+
+  <a
+    class="card"
+    href="https://instagram.com/calibexs"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
+    <div class="tag">INSTAGRAM</div>
+
+    <h3>@calibexs</h3>
+
+    <p>
+      photography, cars, edits,
+      urban exploration, media projects, and whatever else gets posted.
+    </p>
+
+    <div style="
+      margin-top:22px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    ">
+
+      <div style="
+        width:64px;
+        height:64px;
+        border-radius:20px;
+        background:
+          linear-gradient(
+            135deg,
+            #f9ce34,
+            #ee2a7b,
+            #6228d7
+          );
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:26px;
+        font-weight:900;
+        color:white;
+        box-shadow:0 10px 30px rgba(238,42,123,.35);
+      ">
+        ig
+      </div>
+
+      <div>
+
+        <div style="
+          font-size:18px;
+          font-weight:800;
+          color:#f5d0fe;
+        ">
+          calibexs
+        </div>
+
+        <div style="
+          color:#c4b5fd;
+          font-size:14px;
+          margin-top:4px;
+        ">
+          view profile →
+        </div>
+
+      </div>
+
+    </div>
+
+  </a>
+
+</div>
+
+<footer>
+  calibexs.com
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("particles-js", {
+  particles: {
+    number: {
+      value: 90,
+      density: {
+        enable: true,
+        value_area: 900
+      }
+    },
+
+    color: {
+      value: [
+        "#a855f7",
+        "#c084fc",
+        "#818cf8"
+      ]
+    },
+
+    shape: {
+      type: "circle"
+    },
+
+    opacity: {
+      value: 0.5,
+      random: true
+    },
+
+    size: {
+      value: 3,
+      random: true
+    },
+
+    line_linked: {
+      enable: true,
+      distance: 140,
+      color: "#9333ea",
+      opacity: 0.35,
+      width: 1
+    },
+
+    move: {
+      enable: true,
+      speed: 1.5,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false
+    }
+  },
+
+  interactivity: {
+    detect_on: "canvas",
+
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab"
+      },
+
+      onclick: {
+        enable: true,
+        mode: "push"
+      },
+
+      resize: true
+    },
+
+    modes: {
+      grab: {
+        distance: 170,
+        line_linked: {
+          opacity: 0.7
+        }
+      },
+
+      push: {
+        particles_nb: 4
+      }
+    }
+  },
+
+  detectRetina: true
+});
+</script>
+
+</body>
+</html>

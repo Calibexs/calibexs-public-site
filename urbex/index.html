@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>urbex — calibexs</title>
+<meta name="theme-color" content="#7c3aed">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #05010a;
+  color: #f5f3ff;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(99,102,241,.10), transparent 30%),
+    #05010a;
+}
+
+.wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 1150px;
+  margin: auto;
+  padding: 40px 20px 90px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 75px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  background: linear-gradient(135deg, #f5d0fe, #a78bfa, #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #d8b4fe;
+  text-decoration: none;
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.nav a:hover {
+  background: rgba(168,85,247,.12);
+  border-color: rgba(168,85,247,.35);
+}
+
+.hero {
+  margin-bottom: 55px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(70px, 13vw, 155px);
+  line-height: .9;
+  letter-spacing: -6px;
+  font-weight: 1000;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #f5d0fe, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 720px;
+  margin-top: 24px;
+  color: #c4b5fd;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.notice {
+  margin: 28px 0 0;
+  max-width: 760px;
+  color: #a78bfa;
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.section-title {
+  margin: 70px 0 24px;
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.locations {
+  display: grid;
+  gap: 18px;
+}
+
+.location-card {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  transition: .25s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168,85,247,.35);
+  box-shadow: 0 30px 65px rgba(168,85,247,.16);
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(168,85,247,.12);
+  border: 1px solid rgba(168,85,247,.25);
+  color: #d8b4fe;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.location-card h2 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.location-card p {
+  margin: 0;
+  color: #c4b5fd;
+  line-height: 1.7;
+}
+
+.meta {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.meta-row {
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+}
+
+.meta-label {
+  color: #8b5cf6;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.meta-value {
+  margin-top: 4px;
+  color: #ddd6fe;
+}
+
+.placeholder {
+  color: #7c3aed;
+  font-style: italic;
+}
+
+.footer {
+  margin-top: 85px;
+  text-align: center;
+  color: #8b5cf6;
+  font-size: 14px;
+  opacity: .85;
+}
+
+@media(max-width: 800px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+}
+</style>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="@calibexs — digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:title" content="@calibexs">
+<meta property="og:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@calibexs">
+<meta name="twitter:description" content="digital projects, cars, urban exploration, photography, servers, and experiments.">
+<meta name="twitter:image" content="https://calibexs.com/preview.svg">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="logo">
+      <span>calibexs</span>
+    </div>
+
+    <nav class="nav">
+      <a href="/">home</a>
+      <a href="/gallery/">gallery</a>
+      <a href="/journal/">journal</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><span>urbex</span></h1>
+
+    <p>
+      my personal urbex archive
+    </p>
+
+    <div class="notice">
+      no addresses (dont ask), entry methods, security details,
+      exact coordinates, or anything that could damage locations or put people at risk.
+    </div>
+  </section>
+
+  <h2 class="section-title">locations</h2>
+
+  <section class="locations">
+
+    <article class="location-card">
+      <div>
+        <div class="tag">TEMPLATE</div>
+        <h2>location name</h2>
+        <p>
+          short description of the place goes here
+        </p>
+      </div>
+
+      <div class="meta">
+        <div class="meta-row">
+          <div class="meta-label">area</div>
+          <div class="meta-value">city / region only</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">type</div>
+          <div class="meta-value">industrial / school / hospital / house</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">status</div>
+          <div class="meta-value">archived / planned / posted</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">photos</div>
+          <div class="meta-value placeholder">coming soon</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="location-card">
+      <div>
+        <div class="tag">COMING SOON</div>
+        <h2>atlanta spot</h2>
+        <p>
+          future entry for an atl-area location. this can include a short story,
+          condition notes, photo set link, and general category.
+        </p>
+      </div>
+
+      <div class="meta">
+        <div class="meta-row">
+          <div class="meta-label">area</div>
+          <div class="meta-value">atlanta area</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">type</div>
+          <div class="meta-value">unknown</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">status</div>
+          <div class="meta-value">draft</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-label">photos</div>
+          <div class="meta-value placeholder">not added yet</div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="footer">
+    calibexs.com — urbex archive
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+tsParticles.load("particles-js", {
+  particles: {
+    number: {
+      value: 55,
+      density: {
+        enable: true,
+        area: 900
+      }
+    },
+    color: {
+      value: ["#a855f7", "#c084fc", "#818cf8"]
+    },
+    opacity: {
+      value: 0.35,
+      random: true
+    },
+    size: {
+      value: 2.3,
+      random: true
+    },
+    links: {
+      enable: true,
+      distance: 135,
+      color: "#9333ea",
+      opacity: 0.20,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 0.9,
+      outModes: {
+        default: "out"
+      }
+    }
+  },
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "grab"
+      }
+    },
+    modes: {
+      grab: {
+        distance: 140,
+        links: {
+          opacity: 0.45
+        }
+      }
+    }
+  },
+  detectRetina: true
+});
+</script>
+
+</body>
+</html>
