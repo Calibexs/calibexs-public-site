@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>major vps update — calibexs journal</title>
+
+<meta name="theme-color" content="#7c3aed">
+
+<meta
+  name="description"
+  content="a big update to calibexs.com and my VPS."
+>
+
+<meta
+  name="keywords"
+  content="calibexs, journal, blog, urbex, cars, servers, projects"
+>
+
+<meta name="author" content="calibexs">
+
+<meta property="og:title" content="major vps update — calibexs journal">
+
+<meta
+  property="og:description"
+  content="a big update to calibexs.com and my VPS."
+>
+
+<meta property="og:type" content="article">
+
+<meta
+  property="og:url"
+  content="https://calibexs.com/posts/major-vps-update/"
+>
+
+<meta
+  property="og:image"
+  content="https://calibexs.com/preview.svg"
+>
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+  name="twitter:title"
+  content="major vps update — calibexs journal"
+>
+
+<meta
+  name="twitter:description"
+  content="a big update to calibexs.com and my VPS."
+>
+
+<meta
+  name="twitter:image"
+  content="https://calibexs.com/preview.svg"
+>
+
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="https://calibexs.com/favicon.svg"
+>
+
+<link
+  rel="shortcut icon"
+  href="https://calibexs.com/favicon.svg"
+>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#05010a;
+  color:#f5f3ff;
+  line-height:1.8;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:70px 28px;
+}
+
+a{
+  color:#c084fc;
+  text-decoration:none;
+}
+
+a:hover{
+  color:#f5d0fe;
+}
+
+.home{
+  display:inline-block;
+  margin-bottom:70px;
+  color:#c084fc;
+  font-size:18px;
+}
+
+h1{
+  font-size:clamp(48px,9vw,82px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:0 0 28px;
+}
+
+p{
+  font-size:20px;
+}
+
+.card{
+  display:block;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:30px;
+  margin:22px 0;
+  color:inherit;
+}
+
+.card:hover{
+  border-color:rgba(168,85,247,.35);
+}
+
+.date{
+  color:#a78bfa;
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+
+
+  <a class="home" href="/journal/">← back to journal</a>
+
+
+<h1>major vps update</h1>
+<p>today ended up being a pretty big update for calibexs.com and my VPS.</p>
+<p>i originally started working on a few small things, but it turned into adding multiple new services, improving monitoring, cleaning up backups, and making everything feel more connected to the main site.</p>
+<h2>code server</h2>
+<p>one of the biggest additions was <code>code.calibexs.com</code>.</p>
+<p>i now have a private browser-based development environment running directly from my VPS. it lets me work on my websites and projects from a browser without needing to be on my main computer.</p>
+<p>the site is protected behind Cloudflare Access, so it isn't publicly accessible.</p>
+<h2>tools</h2>
+<p>i also created <code>tools.calibexs.com</code>.</p>
+<p>this is a public collection of small networking and developer tools that i can use whenever i need them.</p>
+<p>right now it includes things like:</p>
+<ul>
+<li>DNS lookup</li>
+<li>IPv4 subnet calculator</li>
+<li>SHA-256 hashing</li>
+<li>Base64 encoding and decoding</li>
+<li>UUID generation</li>
+<li>password generation</li>
+<li>timestamp conversion</li>
+</ul>
+<p>i wanted this to be something simple that i could keep expanding whenever i think of another useful tool.</p>
+<h2>drop</h2>
+<p>another new project is <code>drop.calibexs.com</code>.</p>
+<p>this is my own temporary file sharing service.</p>
+<p>the upload and management side is private, while the generated download links can be shared publicly. files can automatically expire after a certain amount of time, which makes it useful for quickly sending something without keeping it hosted forever.</p>
+<h2>image hosting</h2>
+<p>i also built <code>img.calibexs.com</code>.</p>
+<p>this gives me my own image hosting system with a public gallery and private upload management.</p>
+<p>uploaded images get their own random public links, while uploading and deleting images stays protected behind Cloudflare Access.</p>
+<p>the image host currently supports JPG, PNG, and WebP files.</p>
+<h2>monitoring and status</h2>
+<p>i updated <code>status.calibexs.com</code> to monitor the new services too.</p>
+<p>the status page can now show the health of:</p>
+<ul>
+<li>calibexs.com</li>
+<li>WireGuard</li>
+<li>IKEv2</li>
+<li>code server</li>
+<li>tools</li>
+<li>drop</li>
+<li>image hosting</li>
+<li>Minecraft</li>
+<li>VPS services</li>
+</ul>
+<p>the checks run automatically, so the page stays updated without me manually changing anything.</p>
+<p>i also have a private monitoring setup that gives me more detailed information about the VPS while keeping the public status page limited to information that is safe to show.</p>
+<h2>backups</h2>
+<p>i made some more improvements to my backup setup too.</p>
+<p>important configuration and website files are backed up locally and to encrypted Cloudflare R2 storage.</p>
+<p>for the image host, i decided not to back up the actual uploaded images because i don't want them eventually using a huge amount of backup storage. the application configuration and database can still be backed up separately.</p>
+<h2>search and sitemap updates</h2>
+<p>i checked the site's <code>sitemap.xml</code> and <code>robots.txt</code> setup and confirmed they are publicly accessible.</p>
+<p>the sitemap generator is now scheduled to update automatically, so new journal posts and pages can be added without me manually regenerating it every time.</p>
+<p>i also added the new projects to the projects section of the main website.</p>
+<h2>small fixes</h2>
+<p>there were a few smaller changes too.</p>
+<p>all of the new sites now use the same calibexs favicon so they feel like part of the same project.</p>
+<p>i also discovered that one of my cron jobs had created over 30,000 local mail messages because part of the build output wasn't being redirected correctly. i fixed the cron command and cleared the old mailbox.</p>
+<h2>overall</h2>
+<p>this was probably one of the biggest single updates i've made to the VPS so far.</p>
+<p>what started as a basic personal website is slowly turning into an actual collection of self-hosted services that i use regularly.</p>
+<p>everything is still built around the same idea: keeping it simple, keeping it useful, and learning more about Linux, networking, Docker, Cloudflare, and web hosting while i build it.</p>
+
+
+</main>
+
+</body>
+</html>

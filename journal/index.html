@@ -3,78 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>journal — calibexs journal</title>
 
+<meta name="theme-color" content="#7c3aed">
+
+<meta
+  name="description"
+  content="calibexs journal — notes, updates, projects, logs, and random posts."
+>
+
+<meta
+  name="keywords"
+  content="calibexs, journal, blog, urbex, cars, servers, projects"
+>
+
+<meta name="author" content="calibexs">
+
+<meta property="og:title" content="journal — calibexs journal">
+
+<meta
+  property="og:description"
+  content="calibexs journal — notes, updates, projects, logs, and random posts."
+>
+
+<meta property="og:type" content="article">
+
+<meta
+  property="og:url"
+  content="https://calibexs.com/"
+>
+
+<meta
+  property="og:image"
+  content="https://calibexs.com/preview.svg"
+>
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+  name="twitter:title"
+  content="journal — calibexs journal"
+>
+
+<meta
+  name="twitter:description"
+  content="calibexs journal — notes, updates, projects, logs, and random posts."
+>
+
+<meta
+  name="twitter:image"
+  content="https://calibexs.com/preview.svg"
+>
+
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="https://calibexs.com/favicon.svg"
+>
+
+<link
+  rel="shortcut icon"
+  href="https://calibexs.com/favicon.svg"
+>
+
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #05010a;
-  color: #f5f3ff;
-  line-height: 1.8;
+
+*{
+  box-sizing:border-box;
 }
 
-main {
-  max-width: 760px;
-  margin: auto;
-  padding: 60px 22px;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#05010a;
+  color:#f5f3ff;
+  line-height:1.8;
 }
 
-a {
-  color: #c084fc;
-  text-decoration: none;
+main{
+  max-width:900px;
+  margin:auto;
+  padding:70px 28px;
 }
 
-a:hover {
-  color: #f5d0fe;
+a{
+  color:#c084fc;
+  text-decoration:none;
 }
 
-.card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 24px;
-  padding: 24px;
-  margin: 18px 0;
+a:hover{
+  color:#f5d0fe;
 }
 
-.date {
-  color: #a78bfa;
-  font-size: 14px;
+.home{
+  display:inline-block;
+  margin-bottom:70px;
+  color:#c084fc;
+  font-size:18px;
 }
 
-h1 {
-  font-size: 48px;
-  letter-spacing: -2px;
+h1{
+  font-size:clamp(48px,9vw,82px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:0 0 28px;
 }
 
-.home {
-  display: inline-block;
-  margin-bottom: 35px;
+p{
+  font-size:20px;
 }
+
+.card{
+  display:block;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:30px;
+  margin:22px 0;
+  color:inherit;
+}
+
+.card:hover{
+  border-color:rgba(168,85,247,.35);
+}
+
+.date{
+  color:#a78bfa;
+  font-size:15px;
+  margin-bottom:18px;
+}
+
 </style>
 </head>
 
 <body>
+
 <main>
-<a class="home" href="/">← home</a>
+
+
+  <a class="home" href="/">← home</a>
+
+
 
 <h1>journal</h1>
 <p>notes, updates, logs, and random posts.</p>
 
 
-  <div class="card">
-    <div class="date">May 12, 2026</div>
-    <h2><a href="/posts/github-testing/">testing auto pull from github</a></h2>
-    <p>the journal is live.</p>
-  </div>
 
-  <div class="card">
-    <div class="date">May 12, 2026</div>
-    <h2><a href="/posts/first-post/">first post</a></h2>
-    <p>the journal is live.</p>
-  </div>
+  <a
+    href="/journal/posts/major-vps-update/"
+    style="
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    "
+  >
+
+    <div class="card">
+
+      <div class="date">
+        August 25, 2026
+      </div>
+
+      <h2>
+        major vps update
+      </h2>
+
+      <p>
+        a big update to calibexs.com and my VPS.
+      </p>
+
+    </div>
+
+  </a>
+
+
+
+  <a
+    href="/journal/posts/github-testing/"
+    style="
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    "
+  >
+
+    <div class="card">
+
+      <div class="date">
+        May 12, 2026
+      </div>
+
+      <h2>
+        testing auto pull from github
+      </h2>
+
+      <p>
+        the journal is live.
+      </p>
+
+    </div>
+
+  </a>
+
+
+
+  <a
+    href="/journal/posts/first-post/"
+    style="
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    "
+  >
+
+    <div class="card">
+
+      <div class="date">
+        May 12, 2026
+      </div>
+
+      <h2>
+        first post
+      </h2>
+
+      <p>
+        the journal is live.
+      </p>
+
+    </div>
+
+  </a>
+
+
 
 
 </main>
+
 </body>
 </html>

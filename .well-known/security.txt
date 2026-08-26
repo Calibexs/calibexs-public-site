@@ -1,0 +1,3 @@
+Contact: https://calibexs.com/
+Preferred-Languages: en
+Canonical: https://calibexs.com/.well-known/security.txt
