@@ -1,13 +1,13 @@
 :root {
-  --bg: #05010a;
-  --purple: #a855f7;
-  --purple-light: #d8b4fe;
-  --purple-soft: #c4b5fd;
-  --blue: #818cf8;
-  --text: #f5f3ff;
-  --muted: #a78bfa;
-  --card: rgba(255,255,255,.04);
-  --border: rgba(255,255,255,.08);
+  --bg: var(--calibexs-bg);
+  --purple: var(--calibexs-purple);
+  --purple-light: var(--calibexs-purple-light);
+  --purple-soft: var(--calibexs-purple-soft);
+  --blue: var(--calibexs-blue);
+  --text: var(--calibexs-text);
+  --muted: var(--calibexs-muted);
+  --card: var(--calibexs-card);
+  --border: var(--calibexs-border);
 }
 
 html {
@@ -44,7 +44,7 @@ a {
 }
 
 .purple-text {
-  background: linear-gradient(135deg, #f5d0fe, #c084fc, #818cf8);
+  background: linear-gradient(135deg, #f5d0fe, #c084fc, var(--calibexs-blue));
   -webkit-background-clip: text;
   color: transparent;
 }

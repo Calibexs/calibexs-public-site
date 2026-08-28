@@ -1,3 +1,4 @@
-Contact: https://calibexs.com/
+Contact: mailto:security@calibexs.com
+Expires: 2027-08-01T00:00:00Z
 Preferred-Languages: en
 Canonical: https://calibexs.com/.well-known/security.txt

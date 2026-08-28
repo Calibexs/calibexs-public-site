@@ -4,9 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>projects — calibexs</title>
+<title>software, infrastructure & web projects — calibexs</title>
+
+<meta name="description" content="Explore calibexs software, infrastructure, automation, web projects, development experiments, technical tools, project logs, and archived builds.">
+
+<link rel="canonical" href="https://calibexs.com/projects/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:site_name" content="calibexs">
+<meta property="og:title" content="software, infrastructure & web projects — calibexs">
+<meta property="og:description" content="Explore software, infrastructure, automation, websites, technical tools, experiments, and project builds from calibexs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calibexs.com/projects/">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta property="og:image:alt" content="calibexs projects">
 
 <meta name="theme-color" content="#7c3aed">
+
+<link rel="stylesheet" href="/shared-calibexs/theme.css?v=1">
 
 <style>
 
@@ -17,8 +32,8 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#05010a;
-  color:#f5f3ff;
+  background:var(--calibexs-bg);
+  color:var(--calibexs-text);
   overflow-x:hidden;
 }
 
@@ -31,7 +46,7 @@ body{
     radial-gradient(circle at top left, rgba(168,85,247,.18), transparent 28%),
     radial-gradient(circle at top right, rgba(99,102,241,.12), transparent 25%),
     radial-gradient(circle at bottom center, rgba(192,132,252,.10), transparent 30%),
-    #05010a;
+    var(--calibexs-bg);
 }
 
 .wrap{
@@ -60,7 +75,7 @@ body{
 }
 
 .logo span{
-  background:linear-gradient(135deg,#f5d0fe,#a78bfa,#818cf8);
+  background:linear-gradient(135deg,#f5d0fe,var(--calibexs-muted),var(--calibexs-blue));
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -74,7 +89,7 @@ body{
 .nav a{
   text-decoration:none;
 
-  color:#d8b4fe;
+  color:var(--calibexs-purple-light);
 
   border:1px solid rgba(255,255,255,.08);
 
@@ -109,7 +124,7 @@ body{
 }
 
 .hero h1 span{
-  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,var(--calibexs-blue));
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -119,7 +134,7 @@ body{
 
   margin-top:24px;
 
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
 
   line-height:1.8;
 
@@ -169,7 +184,7 @@ body{
   background:
     linear-gradient(
       135deg,
-      #a855f7,
+      var(--calibexs-purple),
       #6366f1
     );
 
@@ -198,7 +213,7 @@ body{
 .github-content p{
   margin:10px 0 0;
 
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
 
   line-height:1.7;
 }
@@ -206,7 +221,7 @@ body{
 .github-link{
   margin-top:12px;
 
-  color:#d8b4fe;
+  color:var(--calibexs-purple-light);
 
   font-size:14px;
 }
@@ -268,7 +283,7 @@ body{
 
   border:1px solid rgba(168,85,247,.24);
 
-  color:#d8b4fe;
+  color:var(--calibexs-purple-light);
 
   font-size:12px;
 
@@ -286,7 +301,7 @@ body{
 .card p{
   margin:0;
 
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
 
   line-height:1.7;
 }
@@ -296,7 +311,7 @@ body{
 
   text-align:center;
 
-  color:#8b5cf6;
+  color:var(--calibexs-muted-2);
 
   opacity:.8;
 
@@ -324,24 +339,12 @@ body{
 </style>
 
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" href="/favicon.svg">
-<meta name="theme-color" content="#7c3aed">
-<meta name="description" content="@calibexs — digital projects, cars, photography, servers, and experiments.">
-<meta property="og:title" content="@calibexs">
-<meta property="og:description" content="digital projects, cars, photography, servers, and experiments.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://calibexs.com/preview.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="@calibexs">
-<meta name="twitter:description" content="digital projects, cars, photography, servers, and experiments.">
-<meta name="twitter:image" content="https://calibexs.com/preview.svg">
 
 </head>
 
-<body>
+<body class="calibexs-theme">
 
-<div id="particles-js"></div>
+<div id="particles-js" class="calibexs-particles"></div>
 
 <div class="wrap">
 
@@ -607,5 +610,7 @@ tsParticles.load("particles-js", {
   </div>
 </section>
 
+<script src="/shared-calibexs/particles.min.js?v=1"></script>
+<script src="/shared-calibexs/particles-config.js?v=1"></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
 
 <title>404 — calibexs</title>
 
+<link rel="stylesheet" href="/shared-calibexs/theme.css?v=1">
+
 <style>
 
 *{
@@ -26,9 +28,9 @@ body{
     radial-gradient(circle at top left, rgba(168,85,247,.20), transparent 28%),
     radial-gradient(circle at top right, rgba(99,102,241,.16), transparent 25%),
     radial-gradient(circle at bottom center, rgba(192,132,252,.12), transparent 30%),
-    #05010a;
+    var(--calibexs-bg);
 
-  color:#f5f3ff;
+  color:var(--calibexs-text);
 }
 
 .grid{
@@ -71,7 +73,7 @@ body{
   font-weight:1000;
   letter-spacing:-8px;
 
-  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,var(--calibexs-blue));
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -83,7 +85,7 @@ h1{
 }
 
 p{
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
   font-size:18px;
   line-height:1.8;
   margin:0 auto;
@@ -132,7 +134,7 @@ p{
 .footer{
   margin-top:38px;
   font-size:14px;
-  color:#8b5cf6;
+  color:var(--calibexs-muted-2);
   opacity:.8;
 }
 
@@ -166,7 +168,7 @@ p{
 
 </head>
 
-<body>
+<body class="calibexs-theme">
 
 <div class="grid"></div>
 

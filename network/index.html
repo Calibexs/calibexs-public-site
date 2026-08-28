@@ -4,8 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>network — calibexs</title>
+<title>public infrastructure & hosted services — calibexs</title>
+
+<meta name="description" content="Explore the public calibexs infrastructure, including hosted services, status monitoring, nginx-powered static sites, GitHub-backed deployments, and web experiments.">
+
+<link rel="canonical" href="https://calibexs.com/network/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:site_name" content="calibexs">
+<meta property="og:title" content="public infrastructure & hosted services — calibexs">
+<meta property="og:description" content="A public overview of calibexs hosted services, status monitoring, static infrastructure, GitHub-backed deployments, and web experiments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calibexs.com/network/">
+<meta property="og:image" content="https://calibexs.com/preview.svg">
+<meta property="og:image:alt" content="calibexs public infrastructure and hosted services">
+
 <meta name="theme-color" content="#7c3aed">
+
+<link rel="stylesheet" href="/shared-calibexs/theme.css?v=1">
 
 <style>
 *{box-sizing:border-box}
@@ -13,8 +29,8 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#05010a;
-  color:#f5f3ff;
+  background:var(--calibexs-bg);
+  color:var(--calibexs-text);
   overflow-x:hidden;
 }
 
@@ -25,7 +41,7 @@ body{
   background:
     radial-gradient(circle at top left, rgba(168,85,247,.16), transparent 28%),
     radial-gradient(circle at top right, rgba(99,102,241,.10), transparent 30%),
-    #05010a;
+    var(--calibexs-bg);
 }
 
 .wrap{
@@ -51,7 +67,7 @@ body{
 }
 
 .logo span{
-  background:linear-gradient(135deg,#f5d0fe,#a78bfa,#818cf8);
+  background:linear-gradient(135deg,#f5d0fe,var(--calibexs-muted),var(--calibexs-blue));
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -64,7 +80,7 @@ body{
 
 .nav a{
   text-decoration:none;
-  color:#d8b4fe;
+  color:var(--calibexs-purple-light);
   border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.03);
   padding:11px 15px;
@@ -90,7 +106,7 @@ body{
 }
 
 .hero h1 span{
-  background:linear-gradient(135deg,#f5d0fe,#c084fc,#818cf8);
+  background:linear-gradient(135deg,#f5d0fe,#c084fc,var(--calibexs-blue));
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -98,7 +114,7 @@ body{
 .hero p{
   max-width:740px;
   margin-top:24px;
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
   line-height:1.8;
   font-size:18px;
 }
@@ -106,7 +122,7 @@ body{
 .notice{
   margin-top:28px;
   max-width:780px;
-  color:#a78bfa;
+  color:var(--calibexs-muted);
   font-size:14px;
   line-height:1.7;
   padding:18px 20px;
@@ -152,7 +168,7 @@ body{
   border-radius:999px;
   background:rgba(168,85,247,.12);
   border:1px solid rgba(168,85,247,.24);
-  color:#d8b4fe;
+  color:var(--calibexs-purple-light);
   font-size:12px;
   font-weight:800;
 }
@@ -165,7 +181,7 @@ body{
 
 .card p{
   margin:0;
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
   line-height:1.7;
 }
 
@@ -190,14 +206,14 @@ body{
 .safe-list{
   margin-top:20px;
   padding-left:18px;
-  color:#c4b5fd;
+  color:var(--calibexs-purple-soft);
   line-height:1.9;
 }
 
 .footer{
   margin-top:80px;
   text-align:center;
-  color:#8b5cf6;
+  color:var(--calibexs-muted-2);
   opacity:.8;
   font-size:14px;
 }
@@ -215,24 +231,12 @@ body{
 </style>
 
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" href="/favicon.svg">
-<meta name="theme-color" content="#7c3aed">
-<meta name="description" content="@calibexs — digital projects, cars, photography, servers, and experiments.">
-<meta property="og:title" content="@calibexs">
-<meta property="og:description" content="digital projects, cars, photography, servers, and experiments.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://calibexs.com/preview.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="@calibexs">
-<meta name="twitter:description" content="digital projects, cars, photography, servers, and experiments.">
-<meta name="twitter:image" content="https://calibexs.com/preview.svg">
 
 </head>
 
-<body>
+<body class="calibexs-theme">
 
-<div id="particles-js"></div>
+<div id="particles-js" class="calibexs-particles"></div>
 
 <div class="wrap">
 
@@ -244,7 +248,7 @@ body{
   <nav class="nav">
     <a href="/">home</a>
     <a href="/projects/">projects</a>
-    <a href="/status/">status</a>
+    <a href="https://status.calibexs.com/">status</a>
     <a href="/journal/">journal</a>
   </nav>
 </header>
@@ -336,7 +340,7 @@ body{
 
 <div class="card">
   <div class="tag">BOUNDARY</div>
-  <h2>future</h2>
+  <h2>planned additions</h2>
 
   <ul class="safe-list">
     <li>1</li>
@@ -410,5 +414,7 @@ tsParticles.load("particles-js", {
 });
 </script>
 
+<script src="/shared-calibexs/particles.min.js?v=1"></script>
+<script src="/shared-calibexs/particles-config.js?v=1"></script>
 </body>
 </html>
