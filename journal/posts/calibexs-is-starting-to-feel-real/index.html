@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+
+<title>calibexs is starting to feel real — calibexs journal</title>
+
+
+<meta name="description" content="a lot has changed since the last update. the sites are cleaner, the infrastructure is more organized, and almost every public calibexs project is now on github.">
+<meta name="author" content="calibexs">
+<meta name="theme-color" content="#7c3aed">
+
+<link rel="canonical" href="https://calibexs.com/journal/posts/calibexs-is-starting-to-feel-real/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:site_name" content="calibexs">
+
+
+<meta property="og:title" content="calibexs is starting to feel real — calibexs journal">
+
+
+<meta property="og:description" content="a lot has changed since the last update. the sites are cleaner, the infrastructure is more organized, and almost every public calibexs project is now on github.">
+
+
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-08-28T00:00:00.000Z">
+
+
+<meta property="og:url" content="https://calibexs.com/journal/posts/calibexs-is-starting-to-feel-real/">
+<meta property="og:image" content="https://calibexs.com/preview.png">
+<meta property="og:image:alt" content="calibexs">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "calibexs is starting to feel real",
+  "description": "a lot has changed since the last update. the sites are cleaner, the infrastructure is more organized, and almost every public calibexs project is now on github.",
+  "datePublished": "2026-08-28T00:00:00.000Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://calibexs.com/journal/posts/calibexs-is-starting-to-feel-real/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "calibexs",
+    "url": "https://calibexs.com/"
+  }
+}
+</script>
+
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#05010a;
+  color:#f5f3ff;
+  line-height:1.8;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:70px 28px;
+}
+
+a{
+  color:#c084fc;
+  text-decoration:none;
+}
+
+a:hover{
+  color:#f5d0fe;
+}
+
+.home{
+  display:inline-block;
+  margin-bottom:70px;
+  color:#c084fc;
+  font-size:18px;
+}
+
+h1{
+  font-size:clamp(48px,9vw,82px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:0 0 28px;
+}
+
+p{
+  font-size:20px;
+}
+
+.card{
+  display:block;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:30px;
+  margin:22px 0;
+  color:inherit;
+}
+
+.card:hover{
+  border-color:rgba(168,85,247,.35);
+}
+
+.date{
+  color:#a78bfa;
+  font-size:15px;
+  margin-bottom:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+
+
+  <a class="home" href="/journal/">← back to journal</a>
+
+
+<p>it's only been a couple days since the last big vps update, but somehow i've already changed enough stuff that it deserves another post.</p>
+<p>the biggest difference is that calibexs is starting to feel less like a bunch of random things i put on a server and more like an actual collection of projects.</p>
+<h2>cleaning everything up</h2>
+<p>a lot of this started with cleaning up calibexs.com.</p>
+<p>i completely removed the old urbex stuff from the site and repository. it was something i didn't really want associated with the site anymore, so instead of just hiding the links, i went through everything and made sure it was actually gone.</p>
+<p>after that i spent a lot of time cleaning up the frontend itself.</p>
+<p>i removed unused stylesheets, got rid of duplicate particle code, fixed some contrast issues, cleaned up pages, and worked on making the site lighter without changing the overall calibexs look.</p>
+<p>the homepage ended up scoring around 98-99 for performance, 100 for accessibility, and 100 for seo in lighthouse, which is probably way more time than i expected to spend chasing a website score, but it was worth it.</p>
+<p>the only weird best practices issues still showing locally are mostly from cloudflare injecting its own scripts, and i'm not turning off security features just to make lighthouse say 100.</p>
+<h2>finally fixing the seo</h2>
+<p>i also went through the main site and journal and fixed a bunch of stuff that i had ignored before.</p>
+<p>pages now have better titles and descriptions, canonical urls, open graph previews for when links are sent through messages, better favicon/meta information, and structured data where it makes sense.</p>
+<p>the 404 page was also fixed so search engines know it is actually a 404 page and shouldn't index it.</p>
+<p>i switched the social preview image to a png too because link previews were being inconsistent before.</p>
+<p>it's a bunch of small stuff, but now sending a calibexs link actually looks like it belongs to a real site instead of just showing a random url.</p>
+<h2>the status page got bigger too</h2>
+<p>the public status page has kept growing with the rest of the server.</p>
+<p>it now keeps track of the main website, status page, calibexs os, radio, the vpn services, tools, drop, images, minecraft, the vps itself, and some of the other services running behind everything.</p>
+<p>i also cleaned up the status script so it only exposes information that is actually useful publicly. no private ips, internal ports, usernames, software versions, or server paths need to be on a public dashboard.</p>
+<p>minecraft is still the service that likes to randomly make the entire dashboard say degraded lol.</p>
+<h2>wireguard and ikev2</h2>
+<p>the vpn setup is also in a much better place now.</p>
+<p>wireguard is still running through the vps and is what i plan to use for the homelab connection once the home server is actually set up.</p>
+<p>the problem is that my college network really does not like wireguard. even trying wireguard over port 443 didn't fix it.</p>
+<p>so i also set up ikev2 with strongswan.</p>
+<p>that actually works on the college network, which means i basically ended up with two vpn options now: wireguard for the stuff where i control the network and ikev2 for devices or networks that block it.</p>
+<p>it's a little redundant, but it's useful redundancy.</p>
+<h2>calibexs os and radio</h2>
+<p>calibexs os has also become one of my favorite random projects on the server.</p>
+<p>it's basically a fake little web operating system inside the calibexs theme, and it now ties into calibexs radio too.</p>
+<p>radio got its own spotify backend so it can pull the currently playing track and related information instead of just being a static page.</p>
+<p>the backend runs separately from the frontend and keeps the actual spotify credentials and session data private.</p>
+<p>that separation ended up becoming important again later when i decided to start publishing everything.</p>
+<h2>tools, drop, and images</h2>
+<p>i also finished cleaning up some of the smaller calibexs services.</p>
+<p>calibexs tools is a collection of browser utilities for networking, cidr/subnet calculations, encoding, hashing, password generation, and other random things i use.</p>
+<p>calibexs drop is the temporary file sharing service. files get their own random download links and the application keeps the file metadata in its own database.</p>
+<p>calibexs images works similarly but is specifically for image hosting. it validates uploaded images, gives them their own links, and also has a public gallery.</p>
+<p>both drop and images keep their actual uploaded content and databases separate from the application source.</p>
+<p>that became really important for the next part.</p>
+<h2>putting calibexs on github</h2>
+<p>today i finally went through almost every public calibexs project and put it on github.</p>
+<p>instead of making one giant repository for everything, each project has its own repo now.</p>
+<p>the public projects include:</p>
+<ul>
+<li><a href="https://github.com/Calibexs/calibexs-public-site">calibexs.com</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-journal">calibexs journal</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-status">calibexs status</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-os">calibexs os</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-radio">calibexs radio</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-tools">calibexs tools</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-drop">calibexs drop</a></li>
+<li><a href="https://github.com/Calibexs/calibexs-img">calibexs images</a></li>
+</ul>
+<p>the important part was making the code public without accidentally making the server public with it.</p>
+<p>radio has real spotify credentials and token/session data.</p>
+<p>drop has a live database containing uploaded file information and download tokens.</p>
+<p>images has its own database and the actual images people upload.</p>
+<p>none of that belongs on github.</p>
+<p>for projects like those, i made separate sanitized public copies containing only the source code, docker files, dependency files, and documentation.</p>
+<p>i also added gitignore rules for databases, runtime data, uploads, environment files, keys, certificates, backups, and other things that should never end up in a commit.</p>
+<p>the actual code-server instance and anything else that is meant for administration or internal use is staying private.</p>
+<p>public code does not need to mean public infrastructure.</p>
+<h2>where everything is at now</h2>
+<p>looking at it now, it's kind of crazy how much this has grown.</p>
+<p>there's the main site, the journal, the status dashboard, os, radio, tools, file hosting, image hosting, wireguard, ikev2, minecraft, backups, monitoring, docker services, cloudflare in front of everything, and now proper github repositories for basically everything that should be public.</p>
+<p>there's still a lot i want to build, especially once i get the home server and start connecting the homelab through the vps.</p>
+<p>but compared to where this started, calibexs finally feels like an actual platform instead of a domain i bought and started throwing random projects onto.</p>
+<p>and knowing me i'll probably add something else tomorrow.</p>
+
+
+</main>
+
+</body>
+</html>
