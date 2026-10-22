@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy | Calibexs</title>
+
+<meta name="description"
+content="Privacy information for Calibexs websites, projects, and public services.">
+
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://calibexs.com/privacy/">
+
+<style>
+:root{
+  --bg:#090713;
+  --panel:#13101e;
+  --border:#2d2440;
+  --text:#f5efff;
+  --soft:#c0b3d7;
+  --muted:#81768f;
+  --purple:#a855f7;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(123,63,228,.18),transparent 34%),
+    var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+
+main{
+  width:min(900px,calc(100% - 40px));
+  margin:auto;
+  padding:90px 0 75px;
+}
+
+.back{
+  color:var(--soft);
+  text-decoration:none;
+  font-size:14px;
+}
+
+.hero{
+  margin:42px 0 45px;
+}
+
+.kicker{
+  color:var(--purple);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:8px 0 14px;
+  font-size:clamp(46px,8vw,78px);
+  letter-spacing:-3px;
+  line-height:1;
+}
+
+.intro{
+  max-width:730px;
+  color:var(--soft);
+  font-size:18px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.card{
+  border:1px solid var(--border);
+  background:rgba(19,16,30,.82);
+  border-radius:20px;
+  padding:26px;
+}
+
+.wide{
+  grid-column:1/-1;
+}
+
+h2{
+  font-size:19px;
+  margin:0 0 9px;
+}
+
+p{
+  margin:0;
+  color:var(--soft);
+}
+
+a{
+  color:#d4afff;
+}
+
+.updated{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:40px;
+}
+
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .wide{grid-column:auto}
+}
+
+[data-cx-navigation] { margin-bottom: 36px; }
+</style>
+<link rel="stylesheet" href="/shared-calibexs/navigation.css?v=1">
+</head>
+
+<body>
+<main>
+
+<nav data-cx-navigation aria-label="Main navigation"></nav>
+
+<header class="hero">
+<div class="kicker">calibexs // privacy</div>
+<h1>Privacy.</h1>
+<p class="intro">
+This page describes the basic privacy practices for Calibexs and its publicly accessible
+services unless a specific service provides additional information.
+</p>
+</header>
+
+<div class="grid">
+
+<section class="card">
+<h2>Basic request information</h2>
+<p>
+Calibexs infrastructure may record technical request information such as IP addresses,
+timestamps, requested URLs, browser or device information, response status, and similar
+server or security log data.
+</p>
+</section>
+
+<section class="card">
+<h2>Cloudflare</h2>
+<p>
+Calibexs uses Cloudflare for DNS, network delivery, security, and traffic analytics.
+Cloudflare may process network and device information while providing those services.
+</p>
+</section>
+
+<section class="card wide">
+<h2>Uploaded content and service data</h2>
+<p>
+Some Calibexs services allow users to submit or upload content. Information required to
+provide that service may be stored or processed, including uploaded files, filenames,
+technical metadata, generated links, and request information. If a service displays an
+expiration or retention period, that service-specific information governs how long that
+content is intended to remain available.
+</p>
+</section>
+
+<section class="card">
+<h2>Temporary services</h2>
+<p>
+Services designed for temporary sharing should not be treated as permanent storage or
+backup systems. Users should avoid uploading highly sensitive information unless they
+understand the risks associated with sharing it.
+</p>
+</section>
+
+<section class="card">
+<h2>Security and abuse prevention</h2>
+<p>
+Technical information may be reviewed or retained when reasonably necessary to maintain
+service availability, investigate errors, detect abuse, or protect Calibexs infrastructure
+and users.
+</p>
+</section>
+
+<section class="card">
+<h2>Cookies</h2>
+<p>
+Calibexs does not intentionally use advertising cookies. Individual infrastructure or
+services may use technically necessary security or session mechanisms where required for
+their normal operation.
+</p>
+</section>
+
+<section class="card">
+<h2>External services</h2>
+<p>
+Calibexs pages may link to third-party websites and platforms. Those services operate under
+their own privacy policies and are not governed by this page.
+</p>
+</section>
+
+<section class="card wide">
+<h2>Contact</h2>
+<p>
+Privacy questions related to Calibexs can be sent through
+<a href="mailto:contact@calibexs.com">contact@calibexs.com</a>.
+</p>
+</section>
+
+</div>
+
+<div class="updated">Last updated: October 6, 2026</div>
+
+</main>
+<script src="/shared-calibexs/navigation.js?v=1" defer></script>
+</body>
+</html>

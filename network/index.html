@@ -228,6 +228,150 @@ body{
     letter-spacing:-3px;
   }
 }
+
+/* CALIBEXS UNIFIED NAVIGATION */
+.cx-unified-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 20px;
+}
+.cx-unified-nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 13px;
+}
+.cx-unified-nav a[aria-current="page"] {
+  color: #c4a5ff;
+  font-weight: 700;
+}
+@media (max-width: 850px) {
+  .cx-unified-nav {
+    justify-content: flex-start;
+    gap: 12px 17px;
+    width: 100%;
+  }
+  .cx-unified-nav a {
+    font-size: 12px;
+  }
+}
+
+
+/* CALIBEXS NETWORK DIAGRAM */
+#cx-network-diagram {
+  margin:55px 0;
+}
+.cx-diagram-intro, .cx-diagram-note {
+  color:#bca9d6;
+  line-height:1.7;
+  font-size:14px;
+}
+.cx-diagram {
+  max-width:940px;
+  margin:30px auto;
+  padding:30px 18px;
+  border:1px solid rgba(180,125,230,.14);
+  border-radius:24px;
+  background:rgba(17,10,27,.7);
+}
+.cx-node {
+  max-width:420px;
+  margin:0 auto;
+  border:1px solid rgba(189,139,245,.24);
+  border-radius:16px;
+  background:#171020;
+  color:#f4edff;
+  overflow:hidden;
+}
+.cx-node summary {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:18px;
+  cursor:pointer;
+  list-style:none;
+}
+.cx-node summary::-webkit-details-marker {display:none;}
+.cx-node summary:focus-visible {
+  outline:2px solid #c69af8;
+  outline-offset:-3px;
+}
+.cx-node summary:hover {
+  background:rgba(168,85,247,.1);
+}
+.cx-node summary strong {
+  display:block;
+  font-size:16px;
+}
+.cx-node summary small {
+  display:block;
+  color:#b8a5d1;
+  margin-top:4px;
+  font-size:12px;
+}
+.cx-node-icon {
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  border-radius:11px;
+  background:rgba(168,85,247,.15);
+  color:#d4adff;
+  font-size:22px;
+}
+.cx-expand {
+  margin-left:auto;
+  color:#c59bf5;
+  font-size:22px;
+}
+.cx-node[open] .cx-expand {transform:rotate(45deg);}
+.cx-node-info {
+  padding:0 18px 18px;
+  color:#c0b0d4;
+  font-size:13px;
+  line-height:1.7;
+}
+.cx-connector {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  color:#b79acb;
+  font-size:11px;
+}
+.cx-connector::before,
+.cx-connector::after {
+  content:"";
+  width:2px;
+  height:18px;
+  background:#72419a;
+}
+.cx-branch-label {
+  text-align:center;
+  color:#b899db;
+  margin:23px 0 15px;
+  font-size:11px;
+  letter-spacing:2px;
+}
+.cx-branches {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.cx-branches .cx-node {width:100%;}
+.cx-branches summary {padding:14px;gap:8px;}
+.cx-branches .cx-node-icon {
+  width:30px;height:30px;font-size:16px;
+}
+.cx-branches summary strong {font-size:14px;}
+@media(max-width:700px) {
+  .cx-branches {grid-template-columns:1fr;}
+  .cx-diagram {padding:18px 12px;}
+}
+
 </style>
 
 
@@ -244,11 +388,14 @@ body{
     <span>calibexs</span>
   </div>
 
-  <nav class="nav">
+  <nav class="nav cx-unified-nav" aria-label="Main navigation">
     <a href="/">home</a>
-    <a href="/projects/">projects</a>
-    <a href="https://status.calibexs.com/">status</a>
+    <a href="/projects/">builds</a>
+    <a href="/network/" aria-current="page">network</a>
     <a href="/journal/">journal</a>
+    <a href="/gallery/">gallery</a>
+    <a href="/cars/">cars</a>
+    <a href="/musse-dawit/">about</a>
   </nav>
 </header>
 
@@ -256,97 +403,342 @@ body{
   <h1><span>network</span></h1>
 
   <p>
-    public-facing infrastructure, hosted services,
-    status systems, domain projects, and web experiments.
+    behind the scenes of my servers, networking, monitoring, and hosted services.
   </p>
 
-  <div class="notice">
-    more to come
+
+</section>
+
+
+<!-- CALIBEXS HOMELAB OVERVIEW -->
+<section id="cx-homelab-overview" aria-labelledby="cx-homelab-title">
+  <h2 class="section-title" id="cx-homelab-title">
+    behind the network
+  </h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="tag">CLOUD</div>
+      <h2>cloud vps</h2>
+      <p>
+        The public-facing hub for Calibexs.
+        Hosts web services and provides secure
+        connectivity between remote devices
+        and the home network.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="tag">HOMELAB</div>
+      <h2>mini1</h2>
+      <p>
+        A Debian-powered mini PC running
+        monitoring, containers, and local services.
+        The central machine for experimenting
+        with Linux infrastructure.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="tag">LINUX</div>
+      <h2>raspberry pis</h2>
+      <p>
+        Small Linux machines used for
+        lightweight services, network experiments,
+        and collecting system metrics.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="tag">OBSERVABILITY</div>
+      <h2>monitoring</h2>
+      <p>
+        Grafana, Prometheus, and Uptime Kuma
+        provide dashboards, system metrics,
+        and service availability checks.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="tag">REMOTE ACCESS</div>
+      <h2>secure connectivity</h2>
+      <p>
+        WireGuard and IKEv2 support remote
+        connectivity, allowing infrastructure
+        to be managed without publicly exposing
+        internal administrative services.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="tag">AUTOMATION</div>
+      <h2>operations</h2>
+      <p>
+        SSH key authentication, backups,
+        monitoring scripts, and service management
+        help keep the environment maintainable.
+      </p>
+    </article>
+
   </div>
 </section>
 
-<h2 class="section-title">public services</h2>
+
+
+<!-- CALIBEXS INTERACTIVE NETWORK DIAGRAM -->
+<section id="cx-network-diagram" aria-labelledby="cx-diagram-title">
+  <h2 class="section-title" id="cx-diagram-title">
+    network architecture
+  </h2>
+  <p class="cx-diagram-intro">
+    How cloud infrastructure, encrypted connections,
+    and local devices fit together. Select a component
+    to learn more.
+  </p>
+
+  <div class="cx-diagram">
+
+    <details class="cx-node">
+      <summary>
+        <span class="cx-node-icon">☁</span>
+        <span>
+          <strong>cloud vps</strong>
+          <small>public hosting & remote gateway</small>
+        </span>
+        <span class="cx-expand">+</span>
+      </summary>
+      <div class="cx-node-info">
+        Debian VPS hosting Calibexs services,
+        secure remote access endpoints, and
+        supporting applications.
+      </div>
+    </details>
+
+    <div class="cx-connector" aria-hidden="true">
+      <span>encrypted tunnels</span>
+    </div>
+
+    <details class="cx-node">
+      <summary>
+        <span class="cx-node-icon">◇</span>
+        <span>
+          <strong>vpn connectivity</strong>
+          <small>wireguard & ikev2</small>
+        </span>
+        <span class="cx-expand">+</span>
+      </summary>
+      <div class="cx-node-info">
+        Secure remote access between devices,
+        the VPS, and supported homelab services.
+        Administrative applications remain private.
+      </div>
+    </details>
+
+    <div class="cx-connector" aria-hidden="true">
+      <span>private connectivity</span>
+    </div>
+
+    <details class="cx-node">
+      <summary>
+        <span class="cx-node-icon">▣</span>
+        <span>
+          <strong>mini1</strong>
+          <small>debian home server</small>
+        </span>
+        <span class="cx-expand">+</span>
+      </summary>
+      <div class="cx-node-info">
+        The main homelab machine, providing
+        monitoring, local application hosting,
+        and access to services on the home network.
+      </div>
+    </details>
+
+    <div class="cx-branch-label">LOCAL HOMELAB</div>
+
+    <div class="cx-branches">
+      <details class="cx-node">
+        <summary>
+          <span class="cx-node-icon">◈</span>
+          <span>
+            <strong>blackpi</strong>
+            <small>raspberry pi</small>
+          </span>
+          <span class="cx-expand">+</span>
+        </summary>
+        <div class="cx-node-info">
+          A Raspberry Pi available for lightweight
+          Linux services and network experiments.
+        </div>
+      </details>
+
+      <details class="cx-node">
+        <summary>
+          <span class="cx-node-icon">◈</span>
+          <span>
+            <strong>legopi</strong>
+            <small>raspberry pi</small>
+          </span>
+          <span class="cx-expand">+</span>
+        </summary>
+        <div class="cx-node-info">
+          A Linux node participating in system
+          monitoring and metrics collection.
+        </div>
+      </details>
+
+      <details class="cx-node">
+        <summary>
+          <span class="cx-node-icon">▥</span>
+          <span>
+            <strong>monitoring</strong>
+            <small>grafana · prometheus · kuma</small>
+          </span>
+          <span class="cx-expand">+</span>
+        </summary>
+        <div class="cx-node-info">
+          Dashboards, time-series metrics, and
+          availability checks running within
+          the homelab environment.
+        </div>
+      </details>
+    </div>
+
+  </div>
+  <p class="cx-diagram-note">
+    Simplified logical overview. Internal addresses,
+    management ports, and sensitive configuration
+    details are intentionally excluded.
+  </p>
+</section>
+
+<!-- CALIBEXS TECHNOLOGY STACK -->
+<h2 class="section-title">technology stack</h2>
 
 <div class="grid">
 
-  <a class="card" href="/">
-    <div class="tag">LIVE</div>
-    <h2>main site</h2>
+  <article class="card">
+    <div class="tag">SYSTEMS</div>
+    <h2>debian & linux</h2>
     <p>
-      the main calibexs.com homepage, project hub,
-      and public entry point.
+      Linux powers the VPS, home server, and Raspberry Pis.
+      Systemd, SSH, and shell scripting handle everyday
+      administration.
     </p>
-    <div class="status"><span class="dot"></span>online</div>
+  </article>
+
+  <article class="card">
+    <div class="tag">HOSTING</div>
+    <h2>docker & nginx</h2>
+    <p>
+      Containers run selected applications while nginx
+      handles public web traffic and static content.
+    </p>
+  </article>
+
+  <article class="card">
+    <div class="tag">CONNECTIVITY</div>
+    <h2>wireguard & ikev2</h2>
+    <p>
+      Encrypted tunnels connect remote devices with
+      the homelab. HAProxy helps route selected
+      internal service traffic.
+    </p>
+  </article>
+
+  <article class="card">
+    <div class="tag">MONITORING</div>
+    <h2>grafana & prometheus</h2>
+    <p>
+      Metrics collection, dashboards, and availability
+      checks provide visibility into machines and services.
+    </p>
+  </article>
+
+</div>
+
+<!-- CALIBEXS HOSTED SERVICES -->
+<h2 class="section-title">hosted services</h2>
+
+<div class="grid">
+
+  <a class="card" href="https://os.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
+    <div class="tag">WEB APP</div>
+    <h2>calibexs os ↗</h2>
+    <p>A browser-based desktop experience.</p>
   </a>
 
-  <a class="card" href="https://status.calibexs.com/" target="_blank" rel="noopener noreferrer">
-    <div class="tag">LIVE</div>
-    <h2>status page</h2>
-    <p>
-      live public status dashboard for services
-      without exposing sensitive server details.
-    </p>
-    <div class="status"><span class="dot"></span>monitored</div>
+  <a class="card" href="https://radio.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
+    <div class="tag">MUSIC</div>
+    <h2>radio ↗</h2>
+    <p>A Spotify-powered listening experience.</p>
   </a>
 
-  <a class="card" href="/journal/">
-    <div class="tag">AUTO</div>
-    <h2>journal</h2>
-    <p>
-      markdown-powered journal that updates through
-      GitHub and static site generation.
-    </p>
-    <div class="status"><span class="dot"></span>static</div>
+  <a class="card" href="https://tools.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
+    <div class="tag">UTILITIES</div>
+    <h2>tools ↗</h2>
+    <p>Networking, hashing, encoding, and other utilities.</p>
   </a>
 
-  <a class="card" href="/gallery/">
+  <a class="card" href="https://drop.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
+    <div class="tag">FILE SHARING</div>
+    <h2>drop ↗</h2>
+    <p>Temporary file sharing through a self-hosted service.</p>
+  </a>
+
+  <a class="card" href="https://img.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
     <div class="tag">MEDIA</div>
-    <h2>gallery</h2>
-    <p>
-      visual archive hub for photography,
-      edits, cars, random media.
-    </p>
-    <div class="status"><span class="dot"></span>planned</div>
+    <h2>images ↗</h2>
+    <p>Image hosting with optimized delivery and viewing.</p>
+  </a>
+
+  <a class="card" href="https://status.calibexs.com/"
+     target="_blank" rel="noopener noreferrer">
+    <div class="tag">AVAILABILITY</div>
+    <h2>status ↗</h2>
+    <p>Current service health and operational information.</p>
   </a>
 
 </div>
 
-<h2 class="section-title">stack</h2>
+<!-- CALIBEXS ROADMAP -->
+<h2 class="section-title">what's next</h2>
 
 <div class="grid">
 
-  <div class="card">
-    <div class="tag">WEB</div>
-    <h2>static-first</h2>
+  <article class="card">
+    <div class="tag">PLANNED</div>
+    <h2>deeper network visibility</h2>
     <p>
-      lightweight pages served through nginx,
-      with most content kept simple and fast.
+      Expand traffic monitoring and device-level metrics
+      across the home network.
     </p>
-  </div>
+  </article>
 
-  <div class="card">
-    <div class="tag">CONTENT</div>
-    <h2>github backed</h2>
+  <article class="card">
+    <div class="tag">PLANNED</div>
+    <h2>resilience & backups</h2>
     <p>
-      journal content is versioned and deployed
-      from a git workflow instead of a heavy CMS.
+      Improve backup coverage, restore testing, and
+      recovery procedures for self-hosted services.
     </p>
-  </div>
+  </article>
 
-</div>
+  <article class="card">
+    <div class="tag">PLANNED</div>
+    <h2>better alerting</h2>
+    <p>
+      Refine availability alerts and reduce the need
+      to manually check monitoring dashboards.
+    </p>
+  </article>
 
-<h2 class="section-title">future</h2>
-
-<div class="card">
-  <div class="tag">BOUNDARY</div>
-  <h2>planned additions</h2>
-
-  <ul class="safe-list">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-  </ul>
 </div>
 
 <div class="footer">

@@ -260,9 +260,74 @@ footer{
 
 }
 
+
+/* CALIBEXS UNIFIED NAVIGATION */
+.cx-unified-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 20px;
+}
+.cx-unified-nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 13px;
+}
+.cx-unified-nav a[aria-current="page"] {
+  color: #c4a5ff;
+  font-weight: 700;
+}
+@media (max-width: 850px) {
+  .cx-unified-nav {
+    justify-content: flex-start;
+    gap: 12px 17px;
+    width: 100%;
+  }
+  .cx-unified-nav a {
+    font-size: 12px;
+  }
+}
+
 </style>
 
 
+
+<script type="application/ld+json" id="identity-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://calibexs.com/#organization",
+      "name": "Calibexs",
+      "url": "https://calibexs.com/",
+      "description": "Calibexs is a collection of self-hosted services, infrastructure, software, networking, and cybersecurity projects.",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://mussedawit.com/#person",
+        "name": "Musse Dawit",
+        "url": "https://mussedawit.com/"
+      },
+      "sameAs": [
+        "https://github.com/Calibexs",
+        "https://www.instagram.com/calibexs",
+        "https://mussedawit.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://calibexs.com/#website",
+      "url": "https://calibexs.com/",
+      "name": "Calibexs",
+      "publisher": {
+        "@id": "https://calibexs.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 
@@ -279,10 +344,14 @@ footer{
     <span>calibexs</span>
   </div>
 
-  <div class="nav-links">
-    <a href="#projects">projects</a>
-    <a href="#explore">explore</a>
-    <a href="#socials">socials</a>
+  <div class="nav-links cx-unified-nav">
+    <a href="/" aria-current="page">home</a>
+    <a href="/projects/">builds</a>
+    <a href="/network/">network</a>
+    <a href="/journal/">journal</a>
+    <a href="/gallery/">gallery</a>
+    <a href="/cars/">cars</a>
+    <a href="/musse-dawit/">about</a>
   </div>
 
 </nav>
@@ -292,8 +361,7 @@ footer{
   <h1><span>calibexs</span></h1>
 
   <p>
-    digital projects, cars, servers, photography, experiments,
-    archives, and whatever else ends up online.
+    a home for the software I create, systems I run, cars I enjoy, and moments I capture.
   </p>
 
   <div class="hero-buttons">
@@ -320,7 +388,7 @@ footer{
 
 </section>
 
-<h2 class="section-title" id="projects">projects</h2>
+<h2 class="section-title" id="projects">builds</h2>
 
 <div class="cards">
 
@@ -334,11 +402,17 @@ footer{
   >
 
     <div class="tag">LIVE</div>
+    <span id="cx-status-indicator" style="
+      float:right;
+      color:#bba8d8;
+      font-size:12px;
+      font-weight:600;
+    ">● Checking...</span>
 
-    <h3>status</h3>
+    <h3 style="clear:both">status</h3>
 
     <p>
-      live public service status for calibexs infrastructure and projects.
+      real-time availability of hosted services.
     </p>
 
   </a>
@@ -350,8 +424,7 @@ footer{
     <h3>cars</h3>
 
     <p>
-      builds, media, rollers, edits,
-      photography, and automotive projects.
+      car builds, modifications, photography, and rolling shots.
     </p>
 
   </a>
@@ -360,11 +433,10 @@ footer{
 
     <div class="tag">LIVE</div>
 
-    <h3>project hub</h3>
+    <h3>software &amp; tools</h3>
 
     <p>
-      public projects, tools, services,
-      experiments, and other calibexs builds.
+      software, web apps, developer tools, and works in progress.
     </p>
 
   </a>
@@ -380,8 +452,7 @@ footer{
     <h3>gallery</h3>
 
     <p>
-      future home for media,
-      edits, photography, and archived content.
+      photography, visual edits, and selected work.
     </p>
 
   </a>
@@ -391,8 +462,7 @@ footer{
     <h3>journal</h3>
 
     <p>
-      notes, logs, ideas,
-      project updates, and random posts.
+      development logs, lessons learned, and occasional updates.
     </p>
 
   </a>
@@ -402,11 +472,23 @@ footer{
     <h3>network</h3>
 
     <p>
-      public-facing infrastructure,
-      status systems, and hosted services.
+      a closer look at the servers and networks behind calibexs.
     </p>
 
   </a>
+
+  <a class="card" href="/musse-dawit/">
+
+
+  <h3>Musse Dawit</h3>
+
+  <p>
+    cybersecurity & computer science,
+    technical projects, infrastructure,
+    and professional work.
+  </p>
+
+</a>
 
 </div>
 
@@ -492,7 +574,40 @@ footer{
 </div>
 
 
-<script src="/shared-calibexs/particles.min.js?v=1"></script>
-<script src="/shared-calibexs/particles-config.js?v=1"></script>
+<script defer src="/shared-calibexs/particles.min.js?v=1"></script>
+<script defer src="/shared-calibexs/particles-config.js?v=1"></script>
+
+
+
+<section class="calibexs-identity"
+style="
+max-width:900px;
+margin:55px auto 35px;
+padding:0 24px;
+text-align:center;
+font-size:14px;
+line-height:1.7;
+opacity:.7;
+">
+  Calibexs is a personal technology and infrastructure project
+  created and maintained by
+  <a href="https://mussedawit.com/"
+     style="color:inherit;font-weight:700;"
+     rel="author">
+    Musse Dawit
+  </a>.
+</section>
+
+
+<div style="text-align:center;margin:18px auto 30px;font-size:12px;opacity:.55">
+  <a href="/privacy/" style="color:inherit;text-decoration:none">privacy</a>
+</div>
+
+
+
+
+
+<script id="cx-status-script" src="/homepage-status.js?v=1" defer></script>
+
 </body>
 </html>
